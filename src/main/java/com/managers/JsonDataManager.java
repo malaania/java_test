@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
@@ -60,16 +61,27 @@ public class JsonDataManager {
     /**
      * Fetches Json from given url.
      *
-     * @param url url to query
+     * @param path String url to query
      * @return Json as String obtained by quering api at url
      */
-    private static String fetchJson(String url) {
+    public static String fetchJson(String path) {
+        String errorMessage = "";
         try {
-            InputStream is = new URL(url).openStream();
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-            String jsonText = readJson(rd);
-            is.close();
-            return jsonText;
+            URL url = new URL(path);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            String responseMessage = connection.getResponseMessage();
+            int code = connection.getResponseCode();
+
+            if (code != HttpURLConnection.HTTP_OK) {
+                System.out.println(code + " : " + responseMessage);
+            } else {
+                InputStream is = connection.getInputStream();
+                BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+                String jsonText = readJson(rd);
+                is.close();
+                return jsonText;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
