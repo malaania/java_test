@@ -1,4 +1,4 @@
-package com.model;
+package model;
 
 /**
  * Represents geographic position of the city.

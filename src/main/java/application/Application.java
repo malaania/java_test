@@ -1,13 +1,13 @@
-package com.application;
+package application;
 
-import com.model.City;
+import model.City;
 
 import java.io.IOException;
 import java.util.List;
 
-import com.managers.CSVManager;
-import com.managers.JsonDataManager;
-import com.util.Util;
+import managers.CSVManager;
+import managers.JsonDataManager;
+import util.Util;
 
 public class Application {
 

@@ -1,7 +1,7 @@
-package com.managers;
+package managers;
 
-import com.model.City;
-import com.util.Util;
+import model.City;
+import util.Util;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 

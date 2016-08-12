@@ -1,5 +1,5 @@
-import com.managers.CSVManager;
-import com.model.City;
+import managers.CSVManager;
+import model.City;
 import org.junit.*;
 import org.junit.rules.TemporaryFolder;
 import org.mockito.Mockito;

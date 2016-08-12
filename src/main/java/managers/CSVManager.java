@@ -1,9 +1,8 @@
-package com.managers;
+package managers;
 
 
-import com.model.City;
-import com.model.CsvEntry;
-import com.util.Util;
+import model.CsvEntry;
+import util.Util;
 
 import java.io.File;
 import java.io.FileWriter;

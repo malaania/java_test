@@ -1,6 +1,5 @@
-package com.model;
+package model;
 
-import com.managers.CSVManager;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.ArrayList;

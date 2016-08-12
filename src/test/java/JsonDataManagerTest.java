@@ -1,5 +1,5 @@
-import com.managers.JsonDataManager;
-import com.model.City;
+import managers.JsonDataManager;
+import model.City;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
